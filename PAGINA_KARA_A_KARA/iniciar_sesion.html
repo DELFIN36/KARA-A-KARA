@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>KARA-A-KARA</title>
+    <link rel="stylesheet" href="css/signin.css">
+  </head>
+  <body>
+    <div class="login-box">
+      <img src="image/login_images/logo.png" class="avatar" alt="Avatar Image">
+      <h1>Login Here</h1>
+      <form>
+        <label for="username">Username</label>
+        <input type="text" placeholder="Enter Username" id="usr">
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter Password" id="pwd">
+        <input type="button" value="Log In" onclick="login();">
+        <a href="#">Lost your Password?</a><br>
+        <a href="#">Don't have An account?</a>
+      </form>
+    </div>
+
+    <script>
+
+        function login(){
+          let fDatos = new FormData();
+          let u = document.getElementById("usr");
+          let p = document.getElementById("pwd");
+          let a = u.value;
+          let b = p.value;
+          console.log(a + b);
+          fDatos.append("login","123");
+          fDatos.append("u",""+a+"");
+          fDatos.append("p",""+b+"");
+
+          let r = new XMLHttpRequest();
+          r.open("POST","php/user.php");
+          //console.log(r);
+          r.onreadystatechange = function(){
+              console.log( this.readyState  );
+              if(this.readyState == 4 && this.status == 200){
+                let datos = JSON.parse( this.responseText );
+                  //console.log(datos);
+                if(datos[0].iniciado == "1"){
+                  window.location.href = "prox.html";
+                }else{
+                  alert("Datos de acceso incorreco");
+                }
+              }
+          }
+          r.send(fDatos);
+
+
+        }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/*BODY*/
+body{
+    background-image: url(../image/background/fondo.jpg);
+    background-size: cover;
+    text-align: center;
+}
+/*PRUEBA*/
+#prueba{
+  height: 100px;
+  width: 100px;
+  text-align: center;
+}
+.division{
+  text-align: center;
+}
+/*JUEGO*/
+.espacio{
+  display: inline;
+}
+.separacion{
+  display:inline-block;
+  margin-left: 150px;
+}
+.Tamaño{
+  height: 200px;
+  width: 400px;
+  margin-right: 200px;
+}
+/*FOOTER*/
+footer{
+    background-color: black;
+    text-align: center;
+    bottom: 0;
+    position:sticky;
+}
+/*RULETA*/
+#app {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 50px;
+    margin-bottom: -200px;
+  }
+  
+  #estilo3 {
+  position: absolute;
+  width: 45px;
+  left: 172px;
+  top: -20px;
+  z-index: 2;
+  margin-left: 45px;
+  }
+  
+  #estilo1 {
+    width:60%;
+    height: 60%;
+  }
+  
+  #estilo2 {
+    width: 80px;
+    margin: 40px auto;
+    cursor: pointer;
+    z-index: 3;
+    margin-bottom: 150px;
+    margin-left: 50px;
+  }
+  
+  #estilo2:hover {
+    opacity: 0.8;
+  }
+  
+  .blur {
+    animation: blur 10s;
+  }
+  
+  @keyframes blur {
+    0% {
+      filter: blur(1.5px);
+    }
+    80% {
+      filter: blur(1.5px);
+    }
+    100% {
+      filter: blur(0px);
+    }
+  }
+  /*DATOS USUARIO*/
+  .Perfil{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 150px;
+    margin-left: -250px;
+    border-radius: 50px;
+  }
+  .Informacion{
+    position: absolute;
+    text-align: center;
+    top: 150px;
+    margin-left: 200px;
+    padding-top:5px;
+  }
+  .space{
+    margin-top: 30px;
+  }

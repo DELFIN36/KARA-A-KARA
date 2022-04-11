@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+header{
+    background: black;
+    background-size: cover;
+    background-position: center center;
+}
+.banner
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to top,rgb(255, 255, 255),transparent),url(../image/fondo_prueba.png);
+    background-size: cover;
+    background-position: bottom;
+}
+.banner .clouds{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.banner .clouds img{
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    animation: animate calc(8s*var(--i)) linear infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: translateX(-100%);
+    }
+    100%
+    {
+        transform: translateX(100%);
+    }
+}
+section
+{
+    position: relative;
+    padding: 75px 100px;
+}
+section h2{
+    font-size: 2.5em;
+    margin-bottom: 20px; ;
+}
+#bannet{
+    font-size: 1.8em;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    width: 500px;
+    position: absolute;
+    z-index: 100;
+    top: 250px;
+    right: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li > a{
+    display: block;
+    position: relative;
+    padding: 20px 15px 10px 15px;
+    text-decoration: none;
+    color: white;
+}
+.link{
+    padding-right: 100px;
+    padding-top: 35px;
+    padding-left: 25px;
+}
+#posicion{
+    display:block;
+    height: 40px;
+    width:110px;
+    padding-top: 10px;
+    margin-right: 50px;
+}
+nav ul li .link::before{
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    background-color: white;
+}
+nav ul li .link:hover::before{
+    transform: scaleX(1);
+}
+#posicion{
+    display:block;
+    height: 40px;
+    width:110px;
+    padding-top: 10px;
+    margin-right: 50px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand',sans-serif;
+}
+.container{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background:#222;
+    margin-left: 400px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.container .clip{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+.container .clip.clip1{
+    background: url(../image/slider/img1.jpg);
+    background-size: cover;
+    clip-path: polygon(0 0, 31% 0, 20% 100%, 0 100%);
+}
+.container .clip.clip2{
+    background: url(../image/slider/img2.jpg);
+    background-size: cover;
+    clip-path: polygon(31% 0, 60% 0, 43% 100%, 20% 100%);
+}
+.container .clip.clip3{
+    background: url(../image/slider/img3.jpg);
+    background-size: cover;
+    clip-path: polygon(60% 0, 84% 0, 70% 100%, 43% 100%);
+}
+.container .clip.clip4{
+    background: url(../image/slider/img4.jpg);
+    background-size: cover;
+    clip-path: polygon(84% 0, 100% 0, 100% 100%, 70% 100%);
+}
+.container:hover .clip
+{
+    clip-path: polygon(100% 0,100% 0,100% 100%,100% 100%);
+}
+.container .clip:hover{
+    clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+}
+.content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    padding: 20px;
+    background: #fff;
+    opacity: 0;
+    transition: 0.5s;
+}
+.container .clip:hover .content{
+    bottom: 0;
+    opacity: 1;
+}
+footer{
+    background-color: #696969;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+.order{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-left: 450px;
+    padding-top: 10px;
+}
+.order li a img{
+    width: 50px;
+    height: 50px;
+    margin-left: 80px;
+}

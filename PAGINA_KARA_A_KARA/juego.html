@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARA-A-KARA</title>
+    <link rel="stylesheet" href="css/estilos_game.css">
+    <style>
+        #numSala{
+            font-size: 50px;
+        }
+    </style>
+    <script>
+         function generaSala(){
+         
+          
+          let r = new XMLHttpRequest();
+          r.open("GET","php/user.php?gR=0");
+          //console.log(r);
+          r.onreadystatechange = function(){
+              console.log( this.readyState  );
+              if(this.readyState == 4 && this.status == 200){
+                let datos = JSON.parse( this.responseText );
+                  console.log(datos);
+                  document.getElementById("numSala").innerHTML= datos[0].IdSala;
+                
+                /*  if(datos[0].iniciado == "1"){
+                  window.location.href = "votar.html";
+                }else{
+                  alert("Datos de acceso incorreco");
+                }
+                */
+              }
+          }
+          r.send();
+
+
+        }
+    </script>
+</head>
+<body>
+    <div id="division">
+        <img id="prueba" src="image/bottons/LOGO_PRUEBA.jpg">
+    </div>
+
+    <div class="espacio">
+        <div class="separacion">
+            <img class="Tamaño" src="image/bottons/FONDO_JUGADOR_PRUEBA.png">
+            <div>
+                <img class="Perfil" src="image/FOTO_PERFIL_1.jpg">
+                <div class="Informacion">
+                    EQUIPO 1
+                    <div class="space"> 
+                        PUNTUACION: 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="separacion">
+            <img class="Tamaño" src="image/bottons/FONDO_JUGADOR_PRUEBA.png">
+            <div>
+                <img class="Perfil" src="image/FOTO_PERFIL_2.jpg">
+                <div class="Informacion">
+                    EQUIPO 2
+                    <div class="space">
+                        PUNTUACION: 
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div id="app">
+        <img id="estilo3" src="image/RULETA_ITEMS/puntero.png">
+        <img id="estilo1" src="image/RULETA_ITEMS/ruleta.png">
+        <img id="estilo2" src="image/RULETA_ITEMS/BUTTON.jpg">
+    </div>
+    <p>
+        <button onclick="generaSala();">Nueva sala</button>
+        <span id="numSala"></span>
+        <button>nueva ronda</button>
+    </p>
+    <div id="dvDatos"></div>
+    <div id="dvVideo"></div>
+<script src="js/ruleta.js"></script>
+</body>
+</html>

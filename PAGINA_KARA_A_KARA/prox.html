@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proximamente</title>
+    <link rel="stylesheet" href="css/estilo_prox.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">PIXETY</a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <img src="image/PROX_IMG/curve.png"class="wave">
+        <div class="contentBx">
+            <h2>PROXIMAMENTE</h2>
+            <p>DEBIDO A PROBLEMAS DE EQUIPO Y FALTA DE PERSONAL ESTA FARTE QUEDA PENDIENTE PARA OTRO MOMENTO</p>
+            <div class="countdown">
+                <div class="time"><div id="day"></div><span>Days</span></div>
+                <div class="time"><div id="hour"></div><span>Hours</span></div>
+                <div class="time"><div id="minute"></div><span>Minutes</span></div>
+                <div class="time"><div id="second"></div><span>Seconds</span></div>
+            </div>
+            <a href="#" onclick="toggle();">Notify Me!</a>
+        </div>
+        <div class="imgBx">
+            <img src="image/PROX_IMG/YO_MERO.png">
+        </div>
+        <ul class="sci">
+            <li><a href="#"><img src="image/PROX_IMG/facebook.png"></a></li>
+            <li><a href="#"><img src="image/PROX_IMG/twitter.png"></a></li>
+            <li><a href="#"><img src="image/PROX_IMG/instagram.png"></a></li>
+        </ul>
+    </section>
+    <div class="newsletter">
+        <h2>MANTENTE AL TANTO</h2>
+        <p>Quedate pendiente de la proxima version</p>
+        <div class="inputBox">
+            <form>
+                <input type="email" name="" required="" placeholder="Email Address">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <img src="image/PROX_IMG/close.png" class="close" onclick="toggle();">
+    </div>
+    <script type="text/javascript">
+        
+        function toggle(){
+            var newsletter = document.querySelector('.newsletter');
+            newsletter.classList.toggle('active')
+        }
+
+
+
+
+
+        var countDate = new Date('July 4, 2022 11:30:00').getTime();
+
+        function newYear(){
+            var now = new Date().getTime();
+            gap = countDate - now;
+
+            var second = 1000;
+            var minute = second * 60;
+            var hour = minute * 60;
+            var day = hour * 24;
+
+            var d = Math.floor(gap/(day));
+            var h = Math.floor((gap % (day))/(hour));
+            var m = Math.floor((gap % (hour))/(minute));
+            var s = Math.floor((gap % (minute)) / second);
+
+            document.getElementById('day').innerText = d;
+            document.getElementById('hour').innerText = h;
+            document.getElementById('minute').innerText = m;
+            document.getElementById('second').innerText = s;
+        }
+        setInterval(function(){
+            newYear();
+        },1000)
+    </script>
+</body>
+</html>
